@@ -8,7 +8,7 @@ minimum_patch=6
 host="/Applications/怪兽Agent.app/Contents/MacOS/monster-agent-plugin-host"
 
 if [ "${1:-}" = "--version" ] || [ "${1:-}" = "-V" ]; then
-  printf '%s\n' 'monster-agent-plugin-launcher 0.3.7'
+  printf '%s\n' 'monster-agent-plugin-launcher 0.3.8'
   exit 0
 fi
 
