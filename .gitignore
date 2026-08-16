@@ -1,0 +1,25 @@
+# Local and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Credentials and signing material must never enter this repository.
+.env
+.env.*
+secrets/
+*.key
+*.pem
+*.p12
+*.cer
+*.certSigningRequest
+*.mobileprovision
+
+# Desktop installers belong in GitHub Releases, not Git history.
+*.dmg
+*.pkg
+*.msi
+*.exe
+!plugins/monster-agent/bin/monster-agent-plugin-launcher.exe
+release-artifacts/
+

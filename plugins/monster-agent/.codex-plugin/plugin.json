@@ -1,0 +1,36 @@
+{
+  "name": "monster-agent",
+  "version": "0.3.7+codex.20260816182003",
+  "description": "\u5c06\u590d\u6742\u5b66\u672f\u4efb\u52a1\u4ece Codex \u5b89\u5168\u4ea4\u63a5\u5230\u672c\u673a\u602a\u517dAgent\u684c\u9762\u7aef\u3002",
+  "author": {
+    "name": "Monster Agent",
+    "url": "https://github.com/garlicwu"
+  },
+  "homepage": "https://github.com/garlicwu/monster-agent-distribution",
+  "repository": "https://github.com/garlicwu/monster-agent-distribution",
+  "license": "MIT",
+  "keywords": [
+    "academic",
+    "research",
+    "handoff",
+    "desktop-agent"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "\u602a\u517dAgent",
+    "shortDescription": "\u5728\u602a\u517dAgent\u684c\u9762\u7aef\u7ee7\u7eed\u5b66\u672f\u4efb\u52a1",
+    "longDescription": "\u8bc6\u522b\u5b66\u672f\u5de5\u4f5c\u6d41\u8bf7\u6c42\u5e76\u521b\u5efa\u672c\u5730\u4ea4\u63a5\uff0c\u4e0d\u590d\u5236 Codex \u51ed\u636e\u6216\u4f1a\u8bdd\u5386\u53f2\uff0c\u540e\u7eed\u4efb\u52a1\u5728\u602a\u517dAgent\u4e2d\u5b8c\u6210\u3002",
+    "developerName": "Monster Agent",
+    "category": "Education",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "\u5728\u602a\u517dAgent\u4e2d\u7ee7\u7eed\u8fd9\u4e2a\u6587\u732e\u7efc\u8ff0\u3002",
+      "\u628a\u8fd9\u4e2a\u7814\u7a76\u5de5\u4f5c\u6d41\u4ea4\u7ed9\u602a\u517dAgent\u3002"
+    ],
+    "brandColor": "#0F766E"
+  },
+  "mcpServers": "./.mcp.json"
+}

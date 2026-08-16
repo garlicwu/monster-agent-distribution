@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "monster-agent": {
+      "command": "./bin/monster-agent-plugin-launcher",
+      "args": ["mcp"],
+      "cwd": "."
+    }
+  }
+}

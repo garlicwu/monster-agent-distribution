@@ -1,0 +1,20 @@
+{
+  "name": "monster-agent",
+  "interface": {
+    "displayName": "怪兽Agent"
+  },
+  "plugins": [
+    {
+      "name": "monster-agent",
+      "source": {
+        "source": "local",
+        "path": "./plugins/monster-agent"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    }
+  ]
+}

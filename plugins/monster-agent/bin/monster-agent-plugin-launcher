@@ -1,0 +1,62 @@
+#!/bin/sh
+set -eu
+set -f
+
+minimum_major=0
+minimum_minor=3
+minimum_patch=6
+host="/Applications/怪兽Agent.app/Contents/MacOS/monster-agent-plugin-host"
+
+if [ "${1:-}" = "--version" ] || [ "${1:-}" = "-V" ]; then
+  printf '%s\n' 'monster-agent-plugin-launcher 0.3.7'
+  exit 0
+fi
+
+fail_installation() {
+  printf '%s\n' \
+    'monster-agent-plugin-launcher: Monster Agent 0.3.6 or newer is unavailable. Install or upgrade with the macOS DMG, restart Codex, and retry.' \
+    >&2
+  exit 1
+}
+
+if [ ! -x "$host" ]; then
+  fail_installation
+fi
+
+version_output=$("$host" --version 2>/dev/null) || fail_installation
+case "$version_output" in
+  'monster-agent-plugin-host '*) host_version=${version_output#monster-agent-plugin-host } ;;
+  *) fail_installation ;;
+esac
+version_core=${host_version%%[-+]*}
+major=${version_core%%.*}
+minor_and_patch=${version_core#*.}
+if [ "$minor_and_patch" = "$version_core" ]; then
+  fail_installation
+fi
+minor=${minor_and_patch%%.*}
+patch=${minor_and_patch#*.}
+if [ "$patch" = "$minor_and_patch" ]; then
+  fail_installation
+fi
+for component in "$major" "$minor" "$patch"; do
+  case "$component" in
+    ''|*[!0-9]*) fail_installation ;;
+  esac
+done
+
+supported=false
+if [ "$major" -gt "$minimum_major" ]; then
+  supported=true
+elif [ "$major" -eq "$minimum_major" ] && [ "$minor" -gt "$minimum_minor" ]; then
+  supported=true
+elif [ "$major" -eq "$minimum_major" ] \
+  && [ "$minor" -eq "$minimum_minor" ] \
+  && [ "$patch" -ge "$minimum_patch" ]; then
+  supported=true
+fi
+if [ "$supported" != true ]; then
+  fail_installation
+fi
+
+exec "$host" "$@"

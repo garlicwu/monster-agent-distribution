@@ -1,0 +1,14 @@
+interface:
+  display_name: "怪兽Agent学术任务交接"
+  short_description: "识别复杂学术任务并安全交接到怪兽Agent桌面端继续处理"
+  default_prompt: "使用 $handoff-to-monster-agent 在怪兽Agent中继续这个学术任务。"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "monster-agent"
+      description: "检查怪兽Agent桌面端安装状态并创建本地学术任务交接。"
+      transport: "stdio"
+
+policy:
+  allow_implicit_invocation: true
