@@ -6,7 +6,7 @@
 ## 安装Codex插件
 
 ```bash
-codex plugin marketplace add garlicwu/monster-agent-distribution
+codex plugin marketplace add garlicwu/monster-agent-distribution --ref v0.3.8
 codex plugin add monster-agent@monster-agent
 ```
 
@@ -16,12 +16,15 @@ codex plugin add monster-agent@monster-agent
 ## 安装怪兽Agent
 
 桌面安装包发布在[Releases](https://github.com/garlicwu/monster-agent-distribution/releases)。
-只使用标记为正式发布且带有校验值的安装包：
+只使用标记为正式发布且带有校验值的安装包，并根据Release中的
+`SHA256SUMS`核对下载文件：
 
-- Windows 10/11 x64：NSIS安装程序
-- macOS 13或更高版本：Apple Silicon使用`aarch64.dmg`，Intel使用`x64.dmg`
+- Windows 10/11 x64：NSIS安装程序；当前未做Authenticode签名，
+  Microsoft Defender SmartScreen可能显示未知发布者提示
+- macOS 13或更高版本：Apple Silicon使用`aarch64.dmg`，Intel使用`x64.dmg`；
+  正式安装包已做Developer ID签名并通过Apple公证
 
-如果Releases中尚无正式签名版本，请等待发布，不要从第三方渠道下载安装包。
+不要从第三方渠道下载安装包。
 
 ## 仓库边界
 
