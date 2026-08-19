@@ -6,7 +6,7 @@
 ## 安装Codex插件
 
 ```bash
-codex plugin marketplace add garlicwu/monster-agent-distribution --ref v0.3.8
+codex plugin marketplace add garlicwu/monster-agent-distribution --ref v0.3.11
 codex plugin add monster-agent@monster-agent
 ```
 
